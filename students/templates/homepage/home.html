@@ -1,0 +1,299 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pangolin&family=Poppins:ital,wght@0,500;0,600;0,700;0,800;0,900;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    
+    <nav
+      class="transparent-navbar navbar sticky-top navbar-expand-lg bg-body-tertiary bg-dark"
+      data-bs-theme="dark"
+    >
+      <div class="container-fluid">
+        <a id="title" class="navbar-brand" href="#">GPS SURYAKHEL</a>
+        <button
+          class="navbar-toggler custom-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a id="L1" class="nav-link active" aria-current="page" href="#"
+                >HOME</a
+              >
+            </li>
+            <li id="drag" class="nav-item">
+              <a id="L2" class="nav-link" href="{% url 'index' %}">STUDENTS</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+
+    <!-- NAVBAR -->
+
+    <!-- HERO IMAGE -->
+
+    <section class="hero">
+      <div class="hero-text">
+        <p class="h5">Our School <b>/</b> Our Pride</p>
+        <p class="h1">GOVERMENT PRIMARY SCHOOL SURYA KHEL(BOYS)</p>
+        <p class="h6">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nulla
+          assumenda facilis unde consequuntur hic ut ea placeat rerum, aliquam
+          et! for contact click on
+        </p>
+        <p></p>
+      </div>
+
+      <div class="hero-image">
+        <img
+          id="img"
+          src="{% static 'images/hero-img.svg' %}"
+          class="img-fluid"
+          alt="img"
+        />
+      </div>
+    </section>
+
+    <!-- HERO IMAGE -->
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        list-style: none;
+        text-decoration: none;
+        font-family: sans-serif;
+        position: relative;
+      }
+
+      .navbar {
+        color: transparent;
+      }
+      .navbar-brand {
+        margin-left: 50px;
+      }
+      /* #drag {
+        margin-right: 150px;
+      } */
+      .nav-item {
+        margin-right: 20px;
+      }
+      .transparent-navbar {
+        background-color: rgb(53, 57, 53) !important; /* Making navbar background transparent */
+        position: absolute; /* Positioning it over other content */
+        width: 100%; /* Ensuring it spans the full width */
+        z-index: 10001; /* Keeping it on top of other content */
+        top: 0; /* Anchoring it to the top of the page */
+        border-bottom: none;
+        margin-bottom: 20px; /* Add a bottom margin to your navbar */
+      }
+
+      /* To ensure the navbar text is visible against the background, 
+   you might consider giving it a light color like white or adjusting 
+   as needed. */
+      .navbar-dark .navbar-brand .navbar-dark .nav-link {
+        color: black;
+      }
+
+      #title {
+        font-size: 25px;
+        font-weight: 600;
+        color: whitesmoke;
+      }
+
+      #L1 {
+        color: whitesmoke;
+        margin-left: 30px;
+        font-size: 15px;
+        font-weight: 600;
+        border-bottom: 2px solid transparent;
+        transition: all 0.55s ease;
+        padding: 0 3px;
+      }
+      #L2 {
+        color: whitesmoke;
+        margin-left: 30px;
+        margin-right: 50px;
+        font-size: 15px;
+        font-weight: 600;
+        border-bottom: 2px solid transparent;
+        transition: all 0.55s ease;
+        padding: 0 3px;
+      }
+
+      .custom-toggler .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'%3e%3c/path%3e%3c/svg%3e");
+        
+      }
+      .custom-toggler{
+        border-color: black;
+        
+      }
+
+      section {
+        padding: 0 7%;
+      }
+
+      .hero {
+        height: 100%;
+        width: 100%;
+        min-height: 100vh;
+        background: hsla(33, 100%, 53%, 1);
+        background: linear-gradient(
+          90deg,
+          hsla(33, 100%, 53%, 1) 0%,
+          hsla(58, 100%, 68%, 1) 100%
+        );
+        background: -moz-linear-gradient(
+          90deg,
+          hsla(33, 100%, 53%, 1) 0%,
+          hsla(58, 100%, 68%, 1) 100%
+        );
+        background: -webkit-linear-gradient(
+          90deg,
+          hsla(33, 100%, 53%, 1) 0%,
+          hsla(58, 100%, 68%, 1) 100%
+        );
+        filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", endColorstr="#FFF95B", GradientType=1 );
+        position: relative;
+
+        /* display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+        padding: 1rem;
+        gap: 1rem;  */
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 2rem;
+        
+      }
+
+      .hero-text {
+        width: 100%; /* Take full width on mobile */
+        /* text-align: left;
+        padding: 1rem; */
+      }
+
+      .hero-text .h5 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #023047;
+        margin-bottom: 1rem;
+      }
+
+      .hero-text .h1 {
+        font-family: cursive;
+        font-size: 1.8rem;
+        line-height: 1;
+        color: #023047;
+        animation: Anim 0.5s ease-in;
+        font-weight: 600;
+        line-height: 120%;
+      }
+
+      .hero-text .h6 {
+        color: #023047;
+
+        font-size: 1rem;
+        line-height: 1.9;
+
+        margin-bottom: 1rem;
+      }
+
+      .hero-text p {
+        margin-bottom: 1rem;
+      }
+
+      #img {
+        width: 100%;
+        max-width: 480px;
+        justify-content: center;
+
+        /* height: auto;
+        width: 480px;
+        margin-left: 110px; */
+      }
+
+      @media only screen and (max-width: 768px) {
+        .hero {
+          grid-template-columns: 1fr; /* Stacking text and image */
+          gap: 0.001rem;
+        }
+
+        .hero-text {
+          padding-top: 10vh; /* Some space above and below the text */
+          text-align: left; /* Optionally, you can center the text */
+        }
+
+        .hero-image img {
+          max-width: 300px; /* Restricting the image width */
+          margin: 0 auto; /* Centering the image */
+        }
+      }
+
+      /* Media queries for larger screens */
+
+      /* For tablets and medium-sized devices */
+      /* @media (min-width: 768px) {
+        .hero {
+          flex-direction: row; 
+          justify-content: space-between;
+        }
+
+        .hero-text,
+        .hero-image {
+          width: 45%; 
+        }
+
+        .hero-text {
+          text-align: left; 
+        }
+
+        #img {
+          width: 90%; 
+          max-width: 500px; 
+        }
+      }
+      @media (min-width: 992px) {
+        #img {
+          width: 100%;
+        }
+      } */
+    </style>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

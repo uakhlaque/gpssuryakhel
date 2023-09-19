@@ -23,7 +23,7 @@ class StudentForm(forms.ModelForm):
       'last_name': forms.TextInput(attrs={'class': 'form-control'}),
       'father_name': forms.TextInput(attrs={'class': 'form-control'}),
       'b_form_no': forms.TextInput(attrs={'class': 'form-control'}),
-      'dob': forms.DateInput(attrs={'class': 'form-control'}, format='%d-%m-%Y'),
+      'dob': forms.DateInput(attrs={'class': 'form-control'}, format='%d/%m/%Y'),
       'age': forms.NumberInput(attrs={'class': 'form-control'}),
       'class_name': forms.TextInput(attrs={'class': 'form-control'}),
       'contact': forms.NumberInput(attrs={'class': 'form-control'}),
